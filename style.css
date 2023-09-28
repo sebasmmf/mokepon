@@ -57,9 +57,9 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* input {
+input {
   display: none;
-} */
+}
 
 input:checked + label {
   background-color: #5d8bf4;
