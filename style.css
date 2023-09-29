@@ -114,7 +114,7 @@ input:checked + label {
   color: white;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 900px) {
   .tarjetas,.tarjetas-ataques {
     flex-direction: column;
   }
