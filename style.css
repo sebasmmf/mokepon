@@ -120,6 +120,14 @@ input:checked + label {
   justify-content: center;
 }
 
+#mapa {
+  margin: 10px;
+}
+
+.botones-movimiento div{
+  margin-top: 5px;
+}
+
 .button-mover-personaje {
   width: 40px;
   height: 40px;
