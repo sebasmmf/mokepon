@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./style.css">
 
     <title>MOKEPON!</title>
@@ -23,6 +24,25 @@
 
       <button id="boton-mascota">Seleccionar</button>
 
+    </section>
+
+    <section id="ver-mapa">
+      <h1 class="titulo">Recorre el mapa con tu mokepon</h1>
+      <canvas id="mapa"></canvas>
+      <div>
+        <button class="button-mover-personaje" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button class="button-mover-personaje" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">
+          <span class="material-symbols-outlined">keyboard_arrow_up</span>
+        </button>
+        <button class="button-mover-personaje" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+        <button class="button-mover-personaje" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
     </section>
 
     <section id="seleccionar-ataque">
