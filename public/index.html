@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <link rel="stylesheet" href="./style.css">
 
     <title>MOKEPON!</title>
-    
   </head>
   <body>
     <section id="seleccionar-mascota">
-
       <h1 class="titulo">Mokepon</h1>
-
       <h2 class="subtitulo">Elige tu mascota:</h2>
-
-      <div id="contenedor-tarjetas" class="tarjetas">
-        
-      </div>
-
+      <div id="contenedor-tarjetas" class="tarjetas"></div>
       <button id="boton-mascota">Seleccionar</button>
-
     </section>
 
     <section id="ver-mapa">
       <h2 class="subtitulo">Recorre el mapa con tu mokepon</h2>
       <canvas id="mapa"></canvas>
       <div class="botones-movimiento">
-        <button class="button-mover-personaje" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">
+        <button class="button-mover-personaje" 
+          ontouchend="detenerMovimiento()"
+          ontouchstart="moverArriba()"
+          onmouseup="detenerMovimiento()" 
+          onmousedown="moverArriba()">
           <span class="material-symbols-outlined">keyboard_arrow_up</span>
         </button>
         <div>
-          <button class="button-mover-personaje" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">
+          <button class="button-mover-personaje" 
+            ontouchend="detenerMovimiento()"
+            ontouchstart="moverIzquierda()"
+            onmouseup="detenerMovimiento()"
+            onmousedown="moverIzquierda()">
             <span class="material-symbols-outlined">chevron_left</span>
           </button>
-          <button class="button-mover-personaje" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">
+          <button class="button-mover-personaje"
+            ontouchend="detenerMovimiento()"
+            ontouchstart="moverAbajo()" 
+            onmouseup="detenerMovimiento()" 
+            onmousedown="moverAbajo()">
             <span class="material-symbols-outlined">expand_more</span>
           </button>
-          <button class="button-mover-personaje" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">
+          <button class="button-mover-personaje"
+            ontouchend="detenerMovimiento()"
+            ontouchstart="moverDerecha()"
+            onmouseup="detenerMovimiento()" 
+            onmousedown="moverDerecha()">
             <span class="material-symbols-outlined">chevron_right</span>
           </button>
         </div>
@@ -49,36 +56,28 @@
 
     <section id="seleccionar-ataque">
       <h1 class="titulo">Mokepon</h1>
-
       <h2 class="subtitulo">Elige tu ataque:</h2>
-
       <div id="contenedor-ataques" class="tarjetas-ataques"></div>
-
       <section id="mensajes">
         <p id="resultado">Mucha Suerte</p>
-        
         <section id="reiniciar">
           <button id="boton-reiniciar">Reiniciar</button>
         </section>
-    
       </section>
-
       <div class="ataques">
         <div class="marcador">
           <p id="vidas-jugador">0</p>
           <p id="mascota-jugador"></p>
           <div id="ataques-del-jugador"></div>
         </div>
-        
         <div class="marcador">
           <p id="vidas-enemigo">0</p>
           <p id="mascota-enemigo"></p>
           <div id="ataques-del-enemigo"></div>
         </div> 
       </div>
-
     </section>
 
-    <script src="./js_mokepon/mokepon.js"></script>
+    <script src="./mokepon.js"></script>
   </body>
 </html>

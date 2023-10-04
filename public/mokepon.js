@@ -47,7 +47,7 @@ let vidasEnemigo = 3;
 let lienzo = mapa.getContext("2d");
 let intervalo;
 let mapaBackground = new Image();
-mapaBackground.src = '././assets/mokemap.webp';
+mapaBackground.src = './assets/mokemap.webp';
 let alturaQueBuscamos;
 let anchoDelMapa = window.innerWidth - 50;
 const anchoMaximoDelMapa = 350;
@@ -88,9 +88,9 @@ class Mokepon {
   }
 }
 
-let hipodoge = new Mokepon('Hipodoge', '././assets/mokepons_mokepon_hipodoge_attack.webp', 5, '././assets/hipodoge.png');
-let capipepo = new Mokepon('Capipepo', '././assets/mokepons_mokepon_capipepo_attack.webp', 5, '././assets/capipepo.png');
-let ratigueya = new Mokepon('Ratigueya', '././assets/mokepons_mokepon_ratigueya_attack.webp', 5, '././assets/ratigueya.webp');
+let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.webp', 5, './assets/hipodoge.png');
+let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.webp', 5, './assets/capipepo.png');
+let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.webp', 5, './assets/ratigueya.webp');
 
 const HIPODOGE_ATAQUES = [
   {nombre:'💧', id:'boton-agua'},
@@ -151,7 +151,7 @@ function iniciarJuego() {
 }
 
 function unirseAlJuego() {
-  fetch("http://localhost:8080/unirse")
+  fetch("http://192.168.1.7:8080/unirse")
     .then(function (res) {
       if (res.ok = true) {
         res.text()
@@ -164,8 +164,6 @@ function unirseAlJuego() {
 }
 
 function seleccionarMascotaJugador() {
-  sectionSeleccionarMascota.style.display = 'none';
-    
   if (inputHipodoge.checked) {
     spanMascotaJugador.innerHTML = inputHipodoge.id;
     mascotaJugador = inputHipodoge.id
@@ -176,8 +174,10 @@ function seleccionarMascotaJugador() {
     spanMascotaJugador.innerHTML = inputRatigueya.id;
     mascotaJugador = inputRatigueya.id
   } else {
-    alert('Selecciona una mascota')
+    alert('Selecciona una mascota');
+    return
   }
+  sectionSeleccionarMascota.style.display = 'none';
 
   seleccionarMokepon(mascotaJugador);
 
@@ -187,7 +187,7 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMokepon(mascotaJugador) {
-  fetch(`http://localhost:8080/mokepon/${jugadorId}`, {
+  fetch(`http://192.168.1.7:8080/mokepon/${jugadorId}`, {
     method: "post",
     headers: {
       "Content-Type": "application/json"
@@ -250,7 +250,7 @@ function secuenciaAtaque() {
 }
 
 function enviarAtaques() {
-  fetch(`http://localhost:8080/mokepon/${jugadorId}/ataques`, {
+  fetch(`http://192.168.1.7:8080/mokepon/${jugadorId}/ataques`, {
     method: "post",
     headers: {
       "Content-Type": "application/json"
@@ -264,7 +264,7 @@ function enviarAtaques() {
 }
 
 function obtenerAtaques() {
-  fetch(`http://localhost:8080/mokepon/${enemigoId}/ataques`)
+  fetch(`http://192.168.1.7:8080/mokepon/${enemigoId}/ataques`)
     .then(function (res) {
       if (res.ok = true) {
         res.json()
@@ -398,7 +398,7 @@ function pintarCanvas() {
 }
 
 function enviarPosicion(x, y) {
-  fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`, {
+  fetch(`http://192.168.1.7:8080/mokepon/${jugadorId}/posicion`, {
     method: "post",
     headers: {
       "Content-Type": "application/json"
